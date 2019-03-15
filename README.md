@@ -85,6 +85,7 @@ redis键为
 
 ## checker.js
 请参照 cpuChecker.js
+* 可以通过 manager.rdm 获取到插件的redis实例，执行redis相关命令。 例如, this.manager.hget() .
 
 ```
 'use strict';
