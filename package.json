@@ -1,6 +1,6 @@
 {
   "name": "@sex-pomelo/sex-scale-plugin",
-  "version": "0.0.1-0",
+  "version": "0.0.1",
   "dependencies": {
     "@sex-pomelo/sex-pomelo-logger": "^0.1.9",
     "ioredis": "^4.5.0"
