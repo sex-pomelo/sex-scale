@@ -1,0 +1,22 @@
+{
+  "name": "@sex-pomelo/sex-scale-plugin",
+  "version": "0.0.1-0",
+  "dependencies": {
+    "@sex-pomelo/sex-pomelo-logger": "^0.1.9",
+    "ioredis": "^4.5.0"
+  },
+  "description": "sex pomelo scale-plugin ===================",
+  "keywords": [
+    "pomelo",
+    "sex-pomelo",
+    "game",
+    "scale"
+  ],
+  "maintainers": [
+    {
+      "name": "shudingbo",
+      "email": "shudingbo@qq.com",
+      "url": "https://github.com/shudingbo"
+    }
+  ]
+}
