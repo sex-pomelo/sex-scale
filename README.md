@@ -8,22 +8,27 @@ sex-scale-plugin for scale up servers. 插件使用redis存取相关配置/数�
 
 ## Usage（用法）
 
-```
+```javascript
 // app.js
 let scale = require('@sex-pomelo/sex-scale-plugin');
 
 app.configure('production|development', 'server', function() {
-	app.use(scale, {
-		scale: {
-           "checkerPath":__dirname+'/checker/',
-           "prefix": 'scfg:vs:',
-           "redisNodes":{
-                "nodes":[{"host":127.0.0.1,"port":6379}],
-                "name":"mymaster",
-            },
-            "password":''
-         }
-	});
+	app.use(scale, 
+  {
+    scale: {
+      checkerPath:__dirname+'/checker/',
+      prefix: 'scfg:vs:',
+      redisNodes:{
+          nodes:[{"host":127.0.0.1,"port":6379}],
+          name:"mymaster",
+      },
+      password:''
+      redisOpts: {
+        username: 'test',
+        password: 'pass'
+      }
+    }
+  });
 });
 
 ```
@@ -45,7 +50,7 @@ redis键为
  * updateTime, 备份服务器列表更新时间戳
 
 #### scale格式
-```
+```javascript
 {
   "servers":  {
     "connector":  {
@@ -65,7 +70,7 @@ redis键为
 
 #### servers
 
-```
+``` javascript
 {
 	"connector":[
 	  {"id":"connector-server-1", "host":"127.0.0.1", "port":4050, "clientPort": 3050, "frontend": true},
@@ -87,7 +92,7 @@ redis键为
 请参照 cpuChecker.js
 * 可以通过 manager.rdm 获取到插件的redis实例，执行redis相关命令。 例如, this.manager.hget() .
 
-```
+``` javascript
 'use strict';
 
 let Checker = function( manager,app,condition,type )
